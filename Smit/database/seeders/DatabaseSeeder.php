@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Http\Controllers\Car;
+use App\Models\Car;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
