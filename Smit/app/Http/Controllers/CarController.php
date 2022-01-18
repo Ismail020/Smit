@@ -13,6 +13,11 @@ class CarController extends Controller
         return view('welcome', ['cars' => Car::with('category')->get()]);
     }
 
+    public function show(Car $car)
+    {
+        return view('show', ['cars' => $car]);
+    }
+
     public function dashboard()
     {
         return view('dashboard.dashboard', [

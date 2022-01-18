@@ -21,6 +21,8 @@
         </style>
     </head>
     <body class="antialiased">
+        <a href="/">Home</a>
+
         <table>
             <tr>
                 <th>Aantal auto's</th>

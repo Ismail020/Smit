@@ -21,21 +21,25 @@
         </style>
     </head>
     <body class="antialiased">
-        <a href="/dashboard">Dashboard</a>
         <table>
             <tr>
                 <th>Merk</th>
                 <th>Type</th>
                 <th>Category</th>
+                <th>Kenteken</th>
+                <th>Bouwdatum</th>
+                <th>Inkoopprijs</th>
+                <th>Verkoopprijs</th>
             </tr>
-            @foreach ($cars as $car)
-                <tr>
-                    <td>{{ $car->merk }}</td>
-                    <td>{{ $car->type }}</td>
-                    <td>{{ $car->category->name }}</td>
-                    <td><a href="/car/{{ $car->id }}">Check auto</a></td>
-                </tr>
-            @endforeach
+            <tr>
+                <td>{{ $cars->merk }}</td>
+                <td>{{ $cars->type }}</td>
+                <td>{{ $cars->category->name }}</td>
+                <td>{{ $cars->kenteken }}</td>
+                <td>{{ $cars->bouwdatum }}</td>
+                <td>{{ $cars->inkoopprijs }}</td>
+                <td>{{ $cars->verkoopprijs }}</td>
+            </tr>
         </table>
     </body>
 </html>

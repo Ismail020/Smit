@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [CarController::class, 'index']);
+Route::get('/car/{car}', [CarController::class, 'show']);
 Route::get('/dashboard', [CarController::class, 'dashboard']);
 
 Route::delete('dashboard/delete/{car}', [CarController::class, 'destroy']);
