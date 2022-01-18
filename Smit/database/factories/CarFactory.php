@@ -19,9 +19,9 @@ class CarFactory extends Factory
             'kenteken' => $this->faker->unique()->numberBetween(5000, 15000),
             'merk' => $this->faker->name(),
             'type' => $this->faker->name(),
-            'bouwdatum' => $this->faker->date(),
-            'prijs ingekocht' => $this->faker->numberBetween(5000, 15000),
-            'prijs te koop' => $this->faker->numberBetween(5000, 15000),
+            'bouwdatum' => $this->faker->year(),
+            'inkoopprijs' => $this->faker->numberBetween(5000, 15000),
+            'verkoopprijs' => $this->faker->numberBetween(5000, 15000),
             'foto' => $this->faker->name(),
         ];
     }

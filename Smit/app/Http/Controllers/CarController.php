@@ -15,7 +15,11 @@ class CarController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard.dashboard', ['cars' => Car::with('category')->get()]);
+        return view('dashboard.dashboard', [
+            'cars' => Car::with('category')->get(), 
+            'aantal' => Car::count(), 'inkoopprijs' => Car::sum('inkoopprijs'),
+            'aantalv' => Car::count(), 'verkoopprijs' => Car::sum('verkoopprijs')
+        ]);
     }
 
     public function destroy(Car $car)

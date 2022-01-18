@@ -22,6 +22,22 @@
     </head>
     <body class="antialiased">
         <table>
+            <tr>
+                <th>Aantal auto's</th>
+                <th>Inkoopprijs totaal</th>
+                <th>Verkoopprijs totaal</th>
+                <th>Marge</th>
+
+            </tr>
+            <tr>
+                <td>{{ $aantal }}</td>
+                <td>{{ $inkoopprijs }}</td>
+                <td>{{ $verkoopprijs }}</td>
+                <td>{{ $verkoopprijs - $inkoopprijs }}</td>
+            </tr>
+
+        </table>
+        <table>
                 <tr>
                     <th>Merk</th>
                     <th>Category</th>
