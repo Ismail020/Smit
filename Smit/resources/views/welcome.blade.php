@@ -137,23 +137,6 @@
             </div>
             @endforeach
         </div>
-            
-            {{-- <a href="/dashboard">Dashboard</a>
-            <table>
-                <tr>
-                    <th>Merk</th>
-                    <th>Type</th>
-                    <th>Category</th>
-                </tr>
-                @foreach ($cars as $car)
-                    <tr>
-                        <td>{{ $car->merk }}</td>
-                        <td>{{ $car->type }}</td>
-                        <td>{{ $car->category->name }}</td>
-                        <td><a href="/car/{{ $car->id }}">Check auto</a></td>
-                    </tr>
-                @endforeach
-            </table> --}}
             </div>
     </body>
 </html>
