@@ -21,6 +21,14 @@
         </style>
     </head>
     <body class="antialiased">
-        
+        <table>
+            @foreach ($cars as $car)
+                <tr>
+                    <td>{{ $car->merk }}</td>
+                    <td>{{ $car->kenteken }}</td>
+                    <td>{{ $car->category->name }}</td>
+                </tr>
+            @endforeach
+        </table>
     </body>
 </html>
