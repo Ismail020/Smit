@@ -17,10 +17,12 @@ class CreateCarsTable extends Migration
             $table->id();
             $table->foreignId('category_id');
             $table->string('kenteken');
-            $table->id();
-            $table->id();
-
-            $table->timestamps();
+            $table->string('merk');
+            $table->string('type');
+            $table->date('bouwdatum');
+            $table->integer('prijs ingekocht');
+            $table->integer('prijs te koop');
+            $table->string('foto')->nullable();
         });
     }
 
