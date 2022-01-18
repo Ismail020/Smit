@@ -19,18 +19,25 @@
     </head>
 
     <body>
-        <div class='flex justify-center'>
-            <div class="grid grid-cols-4">
-                @foreach ($cars as $car)
-                    
-                        {{ $car->merk }}
+        <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+            @foreach ($cars as $car)
+            <div class="p-10">  
+                <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="/mountain.jpg" alt="">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">{{ $car->merk }}</div>
+                    <p class="text-gray-700 text-base">
                         {{ $car->type }}
-                        {{ $car->category->name }}
-                        <a href="/car/{{ $car->id }}">Check auto</a>
-                    
-            @endforeach
+                    </p>
+                </div>
+                <div class="px-6 pt-4 pb-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{ $car->category->name }}</span>
+                    <span class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><a href="/car/{{ $car->id }}">Check auto</a></span>
+                </div>
+                </div>
             </div>
-            
+            @endforeach
+        </div>
             
             {{-- <a href="/dashboard">Dashboard</a>
             <table>
