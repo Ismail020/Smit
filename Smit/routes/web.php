@@ -3,6 +3,7 @@
 use App\Http\Controllers\CarController;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +20,9 @@ Route::get('/car/{car}', [CarController::class, 'show']);
 
 Route::delete('dashboard/delete/{car}', [CarController::class, 'destroy']);
 Route::get('/dashboard/edit/{car}', [CarController::class, 'edit']);
+Route::patch('/dashboard/edit/{car}', [CarController::class, 'update']);
+
+Route::get('/create', [CarController::class, 'create']);
+Route::post('/create/store', [CarController::class, 'store']);
+
+

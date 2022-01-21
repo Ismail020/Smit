@@ -19,7 +19,7 @@ class CreateCarsTable extends Migration
             $table->string('kenteken');
             $table->string('merk');
             $table->string('type');
-            $table->year('bouwdatum');
+            $table->year('bouwjaar');
             $table->integer('inkoopprijs');
             $table->integer('verkoopprijs');
             $table->string('foto')->nullable();

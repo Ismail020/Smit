@@ -15,22 +15,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->insert([    
-            'name' => 'Busjes',  
-         ]);  
-         
-         DB::table('categories')->insert([    
+        DB::table('categories')->insert([
+            'name' => 'Busjes',
+        ]);
+
+        DB::table('categories')->insert([
             'name' => 'SUV',
-         ]);  
+        ]);
 
-         DB::table('categories')->insert([    
+        DB::table('categories')->insert([
             'name' => 'Personen',
-         ]);  
+        ]);
 
-         DB::table('categories')->insert([    
+        DB::table('categories')->insert([
             'name' => 'Cabrio',
-         ]);  
+        ]);
 
-        Car::factory(15)->create();
+        Car::factory(20)->create();
     }
 }

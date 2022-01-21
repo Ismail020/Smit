@@ -9,10 +9,11 @@ class Category extends Model
 {
     use HasFactory;
 
-    public function car() 
+    public function car()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Car::class);
     }
+
 
     public $timestamps = false;
 }

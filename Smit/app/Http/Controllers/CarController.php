@@ -17,6 +17,33 @@ class CarController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return view('create');
+    }
+
+    public function store()
+    {
+
+        $attributes = request()->validate([
+            'kenteken' => ['required', 'max:9', 'min:8', Rule::unique('cars', 'kenteken')],
+            'merk' => ['required'],
+            'type' => ['required'],
+            'bouwjaar' => ['required'],
+            'inkoopprijs' => ['required'],
+            'verkoopprijs' => ['required'],
+            'foto' => ['required', 'image'],
+            'category_id' => ['required', Rule::exists('categories', 'id')]
+        ]);
+
+
+        $attributes['foto'] = request()->file('foto')->store('thumbnails');
+
+        Car::create($attributes);
+
+        return redirect('/');
+    }
+
     public function show(Car $car)
     {
         return view('show', ['cars' => $car]);
@@ -25,32 +52,28 @@ class CarController extends Controller
     public function destroy(Car $car)
     {
         $car->delete();
-        return back();
+        return redirect('/');
     }
 
     public function edit(Car $car)
     {
-        // ugur
         return view('edit', ['car' => $car]);
     }
 
     public function update(Car $car)
     {
         $attributes = request()->validate([
-            'title' => 'required',
-            'thumbnail' => $car->exists ? ['image'] :['required', 'image'],
-            'slug' => ['required', Rule::unique('posts', 'slug')->ignore($car)],
-            'excerpt' => 'required',
-            'body' => 'required',
-            'category_id' => ['required', Rule::exists('categories', 'id')],
-            'published_at' => 'required'
+            'kenteken' => ['required', 'max:9', 'min:8', Rule::unique('cars', 'kenteken')],
+            'merk' => ['required'],
+            'type' => ['required'],
+            'bouwjaar' => ['required'],
+            'inkoopprijs' => ['required'],
+            'verkoopprijs' => ['required'],
+            'category_id' => ['required', Rule::exists('categories', 'id')]
         ]);
 
-        if ($attributes['thumbnail'] ?? false) {
-            $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
-        }
         $car->update($attributes);
 
-        return back();
+        return redirect('/');
     }
 }
